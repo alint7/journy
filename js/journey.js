@@ -106,7 +106,6 @@ function setMarkers(map, locations) {
         var myLatLng = new google.maps.LatLng(item.pos[0], item.pos[1]);
 
         contentString = '<div id="bubbleContent">'+
-            //'<h1 id="firstHeading" class="firstHeading">' + item.title +'</h1>'+
             '<p class="img"><img src="/pics/' + item.pic + '" width="250" /></p>'+
             '<p>' + item.text + '</p>'+
             '</div>';
@@ -116,7 +115,7 @@ function setMarkers(map, locations) {
             map: map,
             title: item.title,
             zIndex: i+2,
-            icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
+            icon: '/img/pin2.png', //'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
             html: contentString
         });
 
