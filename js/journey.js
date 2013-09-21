@@ -43,7 +43,7 @@ $(window).load(function(){
 
     setMarkers(map, ITEMS);
 	
-	loadCategories();
+	//loadCategories();
 });
 
 function loadCategories(){
