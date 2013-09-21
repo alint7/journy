@@ -33,7 +33,7 @@ body {
 }
 
 #map-container {
-    height: 70%;
+    height: 80%;
     position: relative;
 }
 
@@ -73,11 +73,11 @@ body {
 #marketing {
     text-align: center;
     font-size: 18px;
-    padding: 2em 0;
+    padding: 4em 0 2em 0;
 }
 
 #tagline h2 {
-    background-color: rgba(46, 204, 113, .8);
+    background-color: rgba(46, 204, 113, 1);
     padding: 15px 10px;
     text-align: center;
     -webkit-border-radius: 10px;
@@ -85,15 +85,28 @@ body {
     border-radius: 10px;
     color: #ffffff;
     font-size: 27px;
+    line-height: 35px;
+}
+
+#tagline h2 span {
+    font-size: 23px;
+}
+
+#tagline h2 span strong {
+    font-size: 27px;
 }
 
 #tagline {
     position: absolute;
-    bottom: 20px;
+    bottom: -55px;
     width: 100%;
     z-index: 1;
 }
 
 #bubbleContent a {
     text-decoration: underline;
+}
+
+#star-comment {
+    text-align: center;
 }
