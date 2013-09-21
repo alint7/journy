@@ -1,0 +1,85 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    padding-top:50px;
+}
+
+#map-canvas, #map_canvas {
+    height: 100%;
+}
+
+@media print {
+    html, body {
+        height: auto;
+    }
+
+    #map-canvas, #map_canvas {
+        height: 650px;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 730px;
+    }
+}
+
+#map-container {
+    height: 70%;
+    position: relative;
+}
+
+.navbar-inverse {
+    background-color: #e74c3c;
+    border-color: #e74c3c;
+}
+.navbar-inverse {
+    background-color: #2ecc71;
+    border-color: #2ecc71;
+}
+
+.navbar-inverse .navbar-brand {
+    font-size: 29px;
+    font-weight: bold;
+}
+
+.navbar-inverse .navbar-brand,
+.navbar-inverse .navbar-nav > li > a  {
+    color: #fff;
+}
+
+.navbar-inverse .navbar-brand span {
+    font-size: 0.7em;
+    font-weight: normal;
+}
+
+#nav-call2action {
+    margin-top: 10px;
+}
+
+#marketing {
+    text-align: center;
+    font-size: 18px;
+    padding: 2em 0;
+}
+
+#tagline h2 {
+    background-color: rgba(46, 204, 113, .8);
+    padding: 15px 10px;
+    text-align: center;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 27px;
+}
+
+#tagline {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+}
