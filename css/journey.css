@@ -32,6 +32,10 @@ body {
     }
 }
 
+.clear {
+	clear:both;
+}
+
 #map-container {
     height: 70%;
     position: relative;
@@ -96,4 +100,22 @@ body {
 
 #bubbleContent a {
     text-decoration: underline;
+}
+
+#content, #filters{
+	max-width:730px;
+	margin:auto;
+}
+
+#content #filters .category {
+	float:left;
+	padding:5px 10px;
+	border-radius:10px;
+	margin:10px;
+	background-color:#eaeaea;
+}
+
+#content #filters .category:hover {
+	cursor:pointer;
+	background-color:#dedede;
 }

@@ -42,8 +42,53 @@ $(window).load(function(){
     var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
     setMarkers(map, ITEMS);
-
+	
+	loadCategories();
 });
+
+function loadCategories(){
+	$.ajax({
+		url: "json/categories.json",
+		dataType: "json",
+		type: "GET",
+		success: function(data) {
+			for (i=0;i<data.categories.length;i++){
+				var html = "<div class='category' data-tag='"+data.categories[i]+"'>"+data.categories[i]+"</div>"
+				$("#filters").append(html);					
+			}
+			var width=0;
+			$("#filters").append("<div class='clear'></div>");
+			$("#filters .category").each(function(){
+				width+=$(this).outerWidth()+20;
+			});
+			$("#filters").width(width);
+			
+			loadCards(data.categories);
+		}
+	});
+}
+
+
+function loadCards(categories){
+	for (i=0;i<categories.length;i++){
+		$.ajax({
+			url: "json/"+categories[i]+"/items.json",
+			dataType: "json",
+			type: "GET",
+			category: categories[i],
+			success: function(data) {
+				for (i=0;i<data.cards.length;i++){
+					var html = "<div class='card col-sm-6 col-md-3' data-category='"+this.category+"'><div class='thumbnail'>"
+					html+="<div class='title'>"+data.cards[i].title+"</div>";
+					html+="<img src='"+data.cards[i].pic+"'/>";
+					html+="<div class='text'>"+data.cards[i].text+"</div>";
+					html+="</div></div>";						
+					$("#cards").append(html);					
+				}					
+			}
+		});
+	}
+}
 
 function setMarkers(map, locations) {
 
