@@ -50,7 +50,7 @@ function setMarkers(map, locations) {
             position: myLatLng,
             map: map,
             title: item.title,
-            zIndex: i,
+            zIndex: i+2,
             icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
             html: contentString
         });
