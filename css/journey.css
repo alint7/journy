@@ -93,3 +93,7 @@ body {
     width: 100%;
     z-index: 1;
 }
+
+#bubbleContent a {
+    text-decoration: underline;
+}

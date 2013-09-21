@@ -16,6 +16,18 @@ var ITEMS = [
 
 ];
 
+$(document).ready(function(){
+    $('form').submit(function(){
+        var input = $(this).find('input[type="email"]');
+        if (!validateEmail(input.val())) {
+            alert('Please type a valid email address');
+            input.focus();
+            return false;
+        }
+        return true;
+    })
+});
+
 $(window).load(function(){
 
     preloadImages(ITEMS);
@@ -79,3 +91,7 @@ function preloadImages(locations) {
     });
 }
 
+function validateEmail(email) {
+    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+}
