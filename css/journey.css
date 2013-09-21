@@ -26,6 +26,10 @@ body {
     .container {
         max-width: 730px;
     }
+
+    .header-container {
+        max-width: 850px;
+    }
 }
 
 #map-container {
@@ -47,6 +51,10 @@ body {
     font-weight: bold;
 }
 
+.navbar-brand {
+    padding: 0;
+}
+
 .navbar-inverse .navbar-brand,
 .navbar-inverse .navbar-nav > li > a  {
     color: #fff;
@@ -59,7 +67,7 @@ body {
 
 #email,
 #nav-call2action {
-    margin-top: 10px;
+    margin-top: 18px;
 }
 
 #marketing {
