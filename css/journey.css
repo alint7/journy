@@ -139,6 +139,10 @@ body {
     border-color: #5a8f56;
 }
 
+#content #cards .card .thumbnail{
+	
+}
+
 #bubbleContent {
     min-height: 240px;
 }

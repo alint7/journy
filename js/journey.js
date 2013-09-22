@@ -25,7 +25,14 @@ $(document).ready(function(){
             return false;
         }
         return true;
-    })
+    });
+	
+	loadCategories();
+	var hiddenTags="";
+	$("#filters").on("click", ".category",function(){
+		var tag=$(this).data("tag");
+		$("[data-category='"+tag+"']").toggle();		
+	});
 });
 
 $(window).load(function(){
@@ -43,7 +50,7 @@ $(window).load(function(){
 
     setMarkers(map, ITEMS);
 	
-	//loadCategories();
+	
 });
 
 function loadCategories(){
@@ -69,25 +76,24 @@ function loadCategories(){
 }
 
 
-function loadCards(categories){
-	for (i=0;i<categories.length;i++){
-		$.ajax({
-			url: "json/"+categories[i]+"/items.json",
-			dataType: "json",
-			type: "GET",
-			category: categories[i],
-			success: function(data) {
-				for (i=0;i<data.cards.length;i++){
-					var html = "<div class='card col-sm-6 col-md-3' data-category='"+this.category+"'><div class='thumbnail'>"
-					html+="<div class='title'>"+data.cards[i].title+"</div>";
-					html+="<img src='"+data.cards[i].pic+"'/>";
-					html+="<div class='text'>"+data.cards[i].text+"</div>";
-					html+="</div></div>";						
-					$("#cards").append(html);					
-				}					
-			}
-		});
-	}
+function loadCards(categories){	
+	$.ajax({
+		url: "json/items.json",
+		dataType: "json",
+		type: "GET",
+		category: categories[i],
+		success: function(data) {
+			for (i=0;i<data.cards.length;i++){
+				var html = "<div class='card col-sm-6 col-md-3' data-category='"+data.cards[i].tag+"'><div class='thumbnail'>"
+				html+="<div class='title'>"+data.cards[i].title+"</div>";
+				html+="<img src='pics/"+data.cards[i].pic+"'/>";
+				html+="<div class='text'>"+data.cards[i].text+"</div>";
+				html+="</div></div>";						
+				$("#cards").append(html);					
+			}					
+		}
+	});
+	
 }
 
 function setMarkers(map, locations) {
