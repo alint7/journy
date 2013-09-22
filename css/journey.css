@@ -146,3 +146,33 @@ body {
 #bubbleContent {
     min-height: 240px;
 }
+
+#categories .mix{
+    opacity: 0;
+    display: none;
+}
+
+#filter-categories {
+    margin: 20px auto;
+}
+
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+    background-color: #2ecc71;
+}
+a {
+    color: #2ecc71;
+}
+
+a:hover, a:focus {
+    color: #2ecc71;
+}
+
+.thumbnail {
+    min-height: 315px;
+    margin-bottom: 25px;
+}
+
+.thumbnail h3 {
+    font-size: 22px;
+    margin: 5px 0;
+}

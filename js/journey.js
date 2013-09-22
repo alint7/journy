@@ -1,18 +1,18 @@
 var ITEMS = [
 
-    {id: 1, title: 'Bugar\'D Pub', text: 'Bugar’D is a pub combined with live music and DJ. Offering up to 25% off for us! <a href="http://www.bugard.ro" target="_blank">www.bugard.ro</a>', pic: 'Bugard.jpg', pos: [45.75769,21.22767]},
+    {id: 1, tag: 'pub', title: 'Bugar\'D Pub', text: 'Bugar’D is a pub combined with live music and DJ. Offering up to 25% off for us! <a href="http://www.bugard.ro" target="_blank">www.bugard.ro</a>', pic: 'Bugard.jpg', pos: [45.75769,21.22767]},
 
-    {id: 2, title: 'El Che Club', text: 'One of the best clubs in town! 25% Off for us! <a href="https://www.facebook.com/el.che.56" target="_blank">Facebook page</a>', pic: 'Elche.jpg', pos: [45.75681,21.22706]},
+    {id: 2, tag: 'pub', title: 'El Che Club', text: 'One of the best clubs in town! 25% Off for us! <a href="https://www.facebook.com/el.che.56" target="_blank">Facebook page</a>', pic: 'Elche.jpg', pos: [45.75681,21.22706]},
 
-    {id: 3, title: 'Erick\'s Coffee House', text: 'Not just a Coffee house, a cousy one! Check us for discounts! <a href="https://www.facebook.com/pages/Ericks/" target="_blank">Facebook page</a>', pic: 'Ericks.jpg', pos: [45.75756,21.22807]},
+    {id: 3, tag: 'cofee', title: 'Erick\'s Coffee House', text: 'Not just a Coffee house, a cousy one! Check us for discounts! <a href="https://www.facebook.com/pages/Ericks/" target="_blank">Facebook page</a>', pic: 'Ericks.jpg', pos: [45.75756,21.22807]},
 
-    {id: 4, title: 'Jarvis Restaurant', text: 'Captain Jarvis and Friends are waiting for you! 25% Off discounts for us! <a href="http://www.jarvis.ro" target="_blank">www.jarvis.ro</a>', pic: 'Jarvis.jpg', pos: [45.75834,21.22749]},
+    {id: 4, tag: 'food, cofee', title: 'Jarvis Restaurant', text: 'Captain Jarvis and Friends are waiting for you! 25% Off discounts for us! <a href="http://www.jarvis.ro" target="_blank">www.jarvis.ro</a>', pic: 'Jarvis.jpg', pos: [45.75834,21.22749]},
 
-    {id: 5, title: 'Insieme Restaurant', text: 'Italian restaurant having the best pasta in town! Different menu discounts for us! <a href="http://www.restaurantinsieme.ro" target="_blank">www.restaurantinsieme.ro</a>‎', pic: 'insieme.jpg', pos: [45.75750,21.22890]},
+    {id: 5, tag: 'food, cofee', title: 'Insieme Restaurant', text: 'Italian restaurant having the best pasta in town! Menu discounts for us! <a href="http://www.restaurantinsieme.ro" target="_blank">www.restaurantinsieme.ro</a>‎', pic: 'insieme.jpg', pos: [45.75750,21.22890]},
 
-    {id: 6, title: 'Van Graf Bar', text: 'Offering a cousy place to serve a coffee or a good party place on weekends. 25% Off for us! <a href="http://www.vangraph.ro" target="_blank">www.vangraph.ro</a>', pic: 'vangraph.jpg', pos: [45.75934,21.23010]},
+    {id: 6, tag: 'pub cofee', title: 'Van Graf Bar', text: 'Offering a cousy place to serve a coffee or a good party place on weekends. 25% Off for us! <a href="http://www.vangraph.ro" target="_blank">www.vangraph.ro</a>', pic: 'vangraph.jpg', pos: [45.75934,21.23010]},
 
-    {id: 7, title: 'Etnoteca de Savoya ', text: 'The original wine sellar in town! Offering discounts for wine bottles, for tastings just for us! <a href="http://www.enotecadesavoya.ro" target="_blank">www.enotecadesavoya.ro</a>', pic: 'etnoteca.jpg', pos: [45.75670,21.22879]}
+    {id: 7, tag: 'pub, food', title: 'Etnoteca de Savoya ', text: 'The original wine sellar in town! Offering discounts for wine bottles, for tastings just for us! <a href="http://www.enotecadesavoya.ro" target="_blank">www.enotecadesavoya.ro</a>', pic: 'etnoteca.jpg', pos: [45.75670,21.22879]}
 
 ];
 
@@ -26,8 +26,13 @@ $(document).ready(function(){
         }
         return true;
     });
-	
-	//loadCategories();
+
+
+    $("#filter-categories a").click(function(){$(this).parent().click();return false;});
+
+    loadCategories();
+
+    $("#categories").mixitup();
 
 	var hiddenTags="";
 	$("#filters").on("click", ".category",function(){
@@ -37,6 +42,14 @@ $(document).ready(function(){
 });
 
 $(window).load(function(){
+
+    var total = 0;
+    $.each($("#filter-categories li"), function(i, item) {
+        total += $(item).width();
+    });
+    total+=10;
+
+    $("#filter-categories").css({width: total+'px'});
 
     preloadImages(ITEMS);
 
@@ -55,46 +68,13 @@ $(window).load(function(){
 });
 
 function loadCategories(){
-	$.ajax({
-		url: "json/categories.json",
-		dataType: "json",
-		type: "GET",
-		success: function(data) {
-			for (i=0;i<data.categories.length;i++){
-				var html = "<div class='category' data-tag='"+data.categories[i]+"'>"+data.categories[i]+"</div>"
-				$("#filters").append(html);					
-			}
-			var width=0;
-			$("#filters").append("<div class='clear'></div>");
-			$("#filters .category").each(function(){
-				width+=$(this).outerWidth()+20;
-			});
-			$("#filters").width(width);
-			
-			loadCards(data.categories);
-		}
-	});
-}
+    var html = '';
+    html += '<div class="row">';
+    $.each(ITEMS, function(i, item) {
+        html += '<div class="col-md-4 mix '+item.tag+'"><div class="thumbnail"><img src="pics/768/'+item.pic+'" /><div class="caption"><h3>'+item.title+'</h3><p>'+item.text+'</p></div></div></div>';
+    });
 
-
-function loadCards(categories){	
-	$.ajax({
-		url: "json/items.json",
-		dataType: "json",
-		type: "GET",
-		category: categories[i],
-		success: function(data) {
-			for (i=0;i<data.cards.length;i++){
-				var html = "<div class='card col-sm-6 col-md-3' data-category='"+data.cards[i].tag+"'><div class='thumbnail'>"
-				html+="<div class='title'>"+data.cards[i].title+"</div>";
-				html+="<img src='pics/"+data.cards[i].pic+"'/>";
-				html+="<div class='text'>"+data.cards[i].text+"</div>";
-				html+="</div></div>";						
-				$("#cards").append(html);					
-			}					
-		}
-	});
-	
+    $("#categories").html(html);
 }
 
 function setMarkers(map, locations) {
@@ -138,7 +118,7 @@ function setMarkers(map, locations) {
 
 function preloadImages(locations) {
     $(locations).each(function(){
-        $('<img/>')[0].src = this.pic;
+        $('<img/>')[0].src = 'pics/' + this.pic;
     });
 }
 
