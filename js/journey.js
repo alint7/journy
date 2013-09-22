@@ -4,17 +4,19 @@ var ITEMS = [
 
     {id: 2, tag: 'pub', title: 'El Che Club', text: 'One of the best clubs in town! 25% Off for us! <a href="https://www.facebook.com/el.che.56" target="_blank">Facebook page</a>', pic: 'Elche.jpg', pos: [45.75681,21.22706]},
 
-    {id: 3, tag: 'cofee', title: 'Erick\'s Coffee House', text: 'Not just a Coffee house, a cousy one! Check us for discounts! <a href="https://www.facebook.com/pages/Ericks/" target="_blank">Facebook page</a>', pic: 'Ericks.jpg', pos: [45.75756,21.22807]},
+    {id: 3, tag: 'coffee', title: 'Erick\'s Coffee House', text: 'Not just a Coffee house, a cousy one! Check us for discounts! <a href="https://www.facebook.com/pages/Ericks/" target="_blank">Facebook page</a>', pic: 'Ericks.jpg', pos: [45.75756,21.22807]},
 
-    {id: 4, tag: 'food, cofee', title: 'Jarvis Restaurant', text: 'Captain Jarvis and Friends are waiting for you! 25% Off discounts for us! <a href="http://www.jarvis.ro" target="_blank">www.jarvis.ro</a>', pic: 'Jarvis.jpg', pos: [45.75834,21.22749]},
+    {id: 4, tag: 'food, coffee', title: 'Jarvis Restaurant', text: 'Captain Jarvis and Friends are waiting for you! 25% Off discounts for us! <a href="http://www.jarvis.ro" target="_blank">www.jarvis.ro</a>', pic: 'Jarvis.jpg', pos: [45.75834,21.22749]},
 
-    {id: 5, tag: 'food, cofee', title: 'Insieme Restaurant', text: 'Italian restaurant having the best pasta in town! Menu discounts for us! <a href="http://www.restaurantinsieme.ro" target="_blank">www.restaurantinsieme.ro</a>‎', pic: 'insieme.jpg', pos: [45.75750,21.22890]},
+    {id: 5, tag: 'food, coffee', title: 'Insieme Restaurant', text: 'Italian restaurant having the best pasta in town! Menu discounts for us! <a href="http://www.restaurantinsieme.ro" target="_blank">www.restaurantinsieme.ro</a>‎', pic: 'insieme.jpg', pos: [45.75750,21.22890]},
 
-    {id: 6, tag: 'pub cofee', title: 'Van Graf Bar', text: 'Offering a cousy place to serve a coffee or a good party place on weekends. 25% Off for us! <a href="http://www.vangraph.ro" target="_blank">www.vangraph.ro</a>', pic: 'vangraph.jpg', pos: [45.75934,21.23010]},
+    {id: 6, tag: 'pu, coffee', title: 'Van Graf Bar', text: 'Offering a cousy place to serve a coffee or a good party place on weekends. 25% Off for us! <a href="http://www.vangraph.ro" target="_blank">www.vangraph.ro</a>', pic: 'vangraph.jpg', pos: [45.75934,21.23010]},
 
     {id: 7, tag: 'pub, food', title: 'Enoteca de Savoya ', text: 'The original wine sellar in town! Offering discounts for wine bottles, for tastings just for us! <a href="http://www.enotecadesavoya.ro" target="_blank">www.enotecadesavoya.ro</a>', pic: 'etnoteca.jpg', pos: [45.75670,21.22879]},
 
-    {id: 8, tag: 'event', title: '24 hours of theater', text: 'Just imagine: 24 hours full of theater! This year edition was spectacular! <a href="http://www.evive.ro/24-de-ore-de-teatru-2013-poze/evenimente/29-martie-2013" target="_blank">www.evive.ro</a>', pic: '24hourstheather.jpg', pos: [0,0]}
+    {id: 8, tag: 'event', title: '24 hours of theater', text: 'Just imagine: 24 hours full of theater! This year edition was spectacular! <a href="http://www.evive.ro/24-de-ore-de-teatru-2013-poze/evenimente/29-martie-2013" target="_blank">www.evive.ro</a>', pic: '24hourstheather.jpg', pos: [0,0]},
+
+    {id: 9, tag: 'bed', title: 'Hostel Costel', text: 'A traveler\'s den with young stuff and high quality services. <a href="http://www.hostel-costel.ro/" target="_blank">Coolest hostel in town!</a>', pic: 'costel.jpg', pos: [45.758601,21.244701]}
 
 ];
 
