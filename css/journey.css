@@ -155,3 +155,9 @@ a:hover, a:focus {
     font-size: 22px;
     margin: 5px 0;
 }
+
+h2 {
+    text-align: center;
+    font-size: 50px;
+    margin-top: 40px;
+}
