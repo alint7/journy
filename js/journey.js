@@ -14,7 +14,7 @@ var ITEMS = [
 
     {id: 7, tag: 'pub, food', title: 'Enoteca de Savoya ', text: 'The original wine sellar in town! Offering discounts for wine bottles, for tastings just for us! <a href="http://www.enotecadesavoya.ro" target="_blank">www.enotecadesavoya.ro</a>', pic: 'etnoteca.jpg', pos: [45.75670,21.22879]},
 
-    {id: 8, tag: 'event', title: '24 hours of theater', text: 'Just imagine: 24 hours full of theater! This year edition was spectacular! <a href="http://www.evive.ro/24-de-ore-de-teatru-2013-poze/evenimente/29-martie-2013" target="_blank">www.evive.ro</a>', pic: '24hourstheather.jpg', pos: [45.745111,21.212871]}
+    {id: 8, tag: 'event', title: '24 hours of theater', text: 'Just imagine: 24 hours full of theater! This year edition was spectacular! <a href="http://www.evive.ro/24-de-ore-de-teatru-2013-poze/evenimente/29-martie-2013" target="_blank">www.evive.ro</a>', pic: '24hourstheather.jpg', pos: [0,0]}
 
 ];
 
@@ -99,6 +99,9 @@ function setMarkers(map, locations) {
 
     for (var i = 0; i < locations.length; i++) {
         var item = locations[i];
+        if (item.pos[0] == 0) {
+            continue;
+        }
         var myLatLng = new google.maps.LatLng(item.pos[0], item.pos[1]);
 
         contentString = '<div id="bubbleContent">'+
