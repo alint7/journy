@@ -138,3 +138,7 @@ body {
     background-color: #5a8f56;
     border-color: #5a8f56;
 }
+
+#bubbleContent {
+    min-height: 240px;
+}
