@@ -115,7 +115,7 @@ function setMarkers(map, locations) {
             map: map,
             title: item.title,
             zIndex: i+2,
-            icon: '/img/pin2.png', //'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
+            icon: '/img/pin4.png', //'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
             html: contentString
         });
 

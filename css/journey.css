@@ -5,7 +5,7 @@ html, body {
 }
 
 body {
-    padding-top:50px;
+    padding-top:71px;
 }
 
 #map-canvas, #map_canvas {
@@ -135,6 +135,6 @@ body {
 }
 
 .btn-success:hover {
-    background-color: #2ecc71;
-    border-color: #47a447;
+    background-color: #5a8f56;
+    border-color: #5a8f56;
 }
