@@ -169,3 +169,14 @@ blockquote p {
 blockquote .cite-more {
     display: none;
 }
+
+#navbar-form {
+    display: none;
+}
+
+
+@media (min-width: 823px) {
+    #navbar-form {
+        display: block;
+    }
+}
