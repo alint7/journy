@@ -161,3 +161,11 @@ h2 {
     font-size: 50px;
     margin-top: 40px;
 }
+
+blockquote p {
+    line-height: 30px;
+}
+
+blockquote .cite-more {
+    display: none;
+}

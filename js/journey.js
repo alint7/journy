@@ -27,6 +27,13 @@ $(document).ready(function(){
         return true;
     });
 
+    $("blockquote a.cite-trigger").click(function(){
+        $(this).hide();
+        $(this).parents('blockquote').find('.cite-dots').hide();
+        $(this).parents('blockquote').find('.cite-more').show();
+        return false;
+    });
+
 
     $("#filter-categories a").click(function(){$(this).parent().click();return false;});
 
