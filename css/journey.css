@@ -111,24 +111,6 @@ body {
     text-align: center;
 }
 
-#content, #filters{
-	max-width:730px;
-	margin:auto;
-}
-
-#content #filters .category {
-	float:left;
-	padding:5px 10px;
-	border-radius:10px;
-	margin:10px;
-	background-color:#eaeaea;
-}
-
-#content #filters .category:hover {
-	cursor:pointer;
-	background-color:#dedede;
-}
-
 .btn-success {
     background-color: rgba(46, 204, 113, 1);
     border-color:  rgba(46, 204, 113, 1);
@@ -139,9 +121,6 @@ body {
     border-color: #5a8f56;
 }
 
-#content #cards .card .thumbnail{
-	
-}
 
 #bubbleContent {
     min-height: 240px;
