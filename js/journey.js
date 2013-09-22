@@ -27,7 +27,8 @@ $(document).ready(function(){
         return true;
     });
 	
-	loadCategories();
+	//loadCategories();
+
 	var hiddenTags="";
 	$("#filters").on("click", ".category",function(){
 		var tag=$(this).data("tag");
